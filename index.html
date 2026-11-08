@@ -321,7 +321,7 @@
             text-align: center;
         }
 
-        /* Compact Floating WhatsApp Button */
+        /* Floating WhatsApp Button */
         .whatsapp-btn {
             position: fixed;
             bottom: 20px;
@@ -329,15 +329,20 @@
             background-color: #25d366;
             color: white;
             border-radius: 50px;
-            padding: 10px 16px;
+            padding: 10px 18px;
             font-weight: 700;
             text-decoration: none;
             box-shadow: 0 4px 15px rgba(0,0,0,0.25);
             z-index: 1000;
             display: flex;
             align-items: center;
-            gap: 6px;
-            font-size: 0.8rem;
+            gap: 8px;
+            font-size: 0.85rem;
+            transition: transform 0.2s ease;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
         }
 
         /* Map Embed */
@@ -407,9 +412,9 @@
 </head>
 <body>
 
-    <!-- WhatsApp Button -->
-    <a href="#" class="whatsapp-btn" onclick="alert('Connect with the George Greek Youth & Community group!'); return false;">
-        💬 Community Chat
+    <!-- Direct WhatsApp Community Group Button -->
+    <a href="https://chat.whatsapp.com/C6EdSwr7Gp8C1LhBHAg4QQ?s=cl&p=a&iam=2" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+        💬 Join Community Chat
     </a>
 
     <!-- Navigation Bar -->
@@ -433,7 +438,7 @@
         <p>George, Western Cape • Garden Route Parish</p>
         <div class="hero-buttons">
             <a href="#events" class="btn-primary">Upcoming Events</a>
-            <a href="#youth" class="btn-secondary">Youth & Young Adults</a>
+            <a href="https://chat.whatsapp.com/C6EdSwr7Gp8C1LhBHAg4QQ?s=cl&p=a&iam=2" target="_blank" rel="noopener noreferrer" class="btn-secondary">Join WhatsApp Group</a>
         </div>
     </header>
 
@@ -477,18 +482,18 @@
             </div>
         </section>
 
-        <!-- Youth Section -->
+        <!-- Youth & Young Adults Section -->
         <section id="youth" class="card" style="border-left: 4px solid var(--byzantine-gold);">
             <h2>Young Adults & Youth Ministry</h2>
             <p style="margin-bottom: 12px;">
                 Are you a young Greek living in or visiting George? We are actively building an engaged youth network to keep our faith, culture, and community spirit thriving along the Garden Route.
             </p>
             <p style="color: var(--text-muted); font-size: 0.9rem;">
-                Connect with us for upcoming young adult coffee catch-ups, volunteer projects, feast day preparations, and cultural events.
+                Connect with us in our community WhatsApp group for upcoming young adult coffee catch-ups, volunteer projects, feast day preparations, and cultural events.
             </p>
         </section>
 
-        <!-- Services Schedule -->
+        <!-- Divine Services Schedule -->
         <section id="services" class="card">
             <h2>Divine Services Schedule</h2>
             <ul class="schedule-list">
