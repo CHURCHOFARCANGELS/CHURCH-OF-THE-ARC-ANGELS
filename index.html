@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greek Orthodox Church of the Archangels | George</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --gold-primary: #c5a059;
+            --gold-hover: #e0b86c;
+            --bg-dark: #121212;
+            --card-bg: #1e1e1e;
+            --text-light: #e0e0e0;
+            --text-muted: #aaaaaa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: rgba(18, 18, 18, 0.95);
+            border-bottom: 1px solid var(--gold-primary);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .nav-logo {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-primary);
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-primary);
+        }
+
+        /* Hero Header */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1548625361-1574972e79e6?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 3px solid var(--gold-primary);
+        }
+
+        .cross-symbol {
+            font-size: 2.5rem;
+            color: var(--gold-primary);
+            margin-bottom: 10px;
+        }
+
+        header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.8rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--gold-primary);
+            font-weight: 400;
+            max-width: 600px;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        /* Section Cards */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 35px;
+            margin-bottom: 40px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+            border-left: 4px solid var(--gold-primary);
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-primary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-bottom: 1px solid #2a2a2a;
+            padding-bottom: 10px;
+        }
+
+        .lang-toggle-btn {
+            background-color: transparent;
+            border: 1px solid var(--gold-primary);
+            color: var(--gold-primary);
+            padding: 6px 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .lang-toggle-btn:hover {
+            background-color: var(--gold-primary);
+            color: #121212;
+        }
+
+        /* Service Schedule List */
+        .schedule-list {
+            list-style: none;
+        }
+
+        .schedule-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .schedule-item:last-child {
+            border-bottom: none;
+        }
+
+        .service-title {
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .service-time {
+            color: var(--gold-primary);
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 6px;
+            overflow: hidden;
+            height: 200px;
+            border: 1px solid #333;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        /* Map Embed */
+        .map-container {
+            width: 100%;
+            height: 350px;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid #333;
+            margin-top: 15px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #0a0a0a;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid #222;
+        }
+
+        /* Mobile Responsive Adjustments */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.1rem; }
+            .nav-container { flex-direction: column; gap: 10px; }
+            .schedule-item { flex-direction: column; gap: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">ARCHANGELS GEORGE</a>
+            <ul class="nav-links">
+                <li><a href="#about">Welcome</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#location">Location</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <header>
+        <div class="cross-symbol">☦</div>
+        <h1>Greek Orthodox Church of the Archangels</h1>
+        <p>George, Western Cape, South Africa</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- Welcome Section -->
+        <section id="about" class="card">
+            <h2>Welcome to Our Parish</h2>
+            <button class="lang-toggle-btn" onclick="toggleLanguage()">Switch to Greek / Ελληνικά</button>
+            
+            <p id="welcome-text">
+                Welcome to the official online portal of the Greek Orthodox Church of the Archangels in George. We are an Orthodox Christian community dedicated to prayer, divine worship, spiritual growth, and preserving our sacred tradition in the Garden Route. All parishioners, visitors, and seekers are warmly invited to worship with us.
+            </p>
+        </section>
+
+        <!-- Divine Services Schedule -->
+        <section id="services" class="card">
+            <h2>Divine Services Schedule</h2>
+            <ul class="schedule-list">
+                <li class="schedule-item">
+                    <span class="service-title">Sunday Orthros (Matins)</span>
+                    <span class="service-time">09:00 AM</span>
+                </li>
+                <li class="schedule-item">
+                    <span class="service-title">Sunday Divine Liturgy</span>
+                    <span class="service-time">10:00 AM</span>
+                </li>
+                <li class="schedule-item">
+                    <span class="service-title">Feast Days & Special Services</span>
+                    <span class="service-time">As Announced</span>
+                </li>
+                <li class="schedule-item">
+                    <span class="service-title">Feast of the Archangels (Patronal Feast)</span>
+                    <span class="service-time">8 November</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="card">
+            <h2>Parish Life & Architecture</h2>
+            <p style="color: var(--text-muted); margin-bottom: 15px;">Scenes from our divine worship and parish community.</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1548625361-1574972e79e6?auto=format&fit=crop&w=800&q=80" alt="Orthodox Church Architecture">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=800&q=80" alt="Icons and Candles">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1544427920-c49ccfb85579?auto=format&fit=crop&w=800&q=80" alt="Sanctuary Lighting">
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section id="location" class="card">
+            <h2>Location & Directions</h2>
+            <p>Our parish serves the Greek Orthodox faithful and visitors in George and the surrounding Garden Route region.</p>
+            
+            <div class="map-container">
+                <iframe 
+                    src="https://maps.google.com/maps?q=George,%20Western%20Cape&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Greek Orthodox Church of the Archangels, George. All rights reserved.</p>
+    </footer>
+
+    <!-- Language Toggle Script -->
+    <script>
+        let isGreek = false;
+        function toggleLanguage() {
+            const textElement = document.getElementById('welcome-text');
+            const btnElement = document.querySelector('.lang-toggle-btn');
+            
+            if (!isGreek) {
+                textElement.innerHTML = "Καλώς ήρθατε στην επίσημη ιστοσελίδα του Ελληνορθόδοξου Ναού των Αρχαγγέλων στο George. Είμαστε μια Ορθόδοξη Χριστιανική κοινότητα αφοσιωμένη στην προσευχή, τη θεία λατρεία και την πνευματική ανάπτυξη. Όλοι οι ενορίτες και οι επισκέπτες είναι θερμά ευπρόσδεκτοι.";
+                btnElement.innerText = "Switch to English";
+                isGreek = true;
+            } else {
+                textElement.innerHTML = "Welcome to the official online portal of the Greek Orthodox Church of the Archangels in George. We are an Orthodox Christian community dedicated to prayer, divine worship, spiritual growth, and preserving our sacred tradition in the Garden Route. All parishioners, visitors, and seekers are warmly invited to worship with us.";
+                btnElement.innerText = "Switch to Greek / Ελληνικά";
+                isGreek = false;
+            }
+        }
+    </script>
+
+</body>
+</html>
