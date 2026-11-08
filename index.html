@@ -5,20 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Greek Orthodox Church of the Archangels | George</title>
-    <!-- Google Fonts for Ancient & Sacred Typography -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Cinzel:wght@600;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --byzantine-gold: #b8860b;
             --gold-light: #d4af37;
-            --deep-crimson: #681c1c;
             --parchment-bg: #fdfbf7;
             --parchment-card: #f4efe6;
             --border-gold: #d2b48c;
-            --text-dark: #2c221e;
+            --text-dark: #1a1a1a;
             --text-muted: #5c534e;
         }
 
@@ -34,15 +33,13 @@
             background-color: var(--parchment-bg);
             color: var(--text-dark);
             line-height: 1.8;
-            background-image: radial-gradient(#e6dfd1 0.75px, transparent 0.75px);
-            background-size: 24px 24px;
         }
 
         /* Navigation Bar */
         nav {
             position: sticky;
             top: 0;
-            background-color: rgba(253, 251, 247, 0.95);
+            background-color: rgba(253, 251, 247, 0.98);
             border-bottom: 2px solid var(--byzantine-gold);
             z-index: 1000;
             backdrop-filter: blur(5px);
@@ -59,7 +56,7 @@
 
         .nav-logo {
             font-family: 'Cinzel', serif;
-            color: var(--deep-crimson);
+            color: var(--text-dark);
             font-size: 1.1rem;
             font-weight: 800;
             text-decoration: none;
@@ -85,9 +82,9 @@
             color: var(--byzantine-gold);
         }
 
-        /* Hero Header with Ancient Aesthetic */
+        /* Hero Header with Exterior Church Image */
         header {
-            background: linear-gradient(rgba(44, 34, 30, 0.8), rgba(44, 34, 30, 0.8)), url('https://images.unsplash.com/photo-1548625361-1574972e79e6?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(20, 20, 20, 0.55), rgba(20, 20, 20, 0.55)), url('exterior.jpg') no-repeat center center/cover;
             min-height: 80vh;
             display: flex;
             flex-direction: column;
@@ -96,23 +93,15 @@
             text-align: center;
             padding: 40px 20px;
             border-bottom: 5px solid var(--byzantine-gold);
-            position: relative;
-        }
-
-        .header-ornament {
-            font-size: 2rem;
-            color: var(--gold-light);
-            margin-bottom: 10px;
-            letter-spacing: 10px;
         }
 
         header h1 {
-            font-family: 'Cinzel Decorative', serif;
+            font-family: 'Cinzel', serif;
             font-size: 2.8rem;
             color: #ffffff;
             margin-bottom: 15px;
             letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
         }
 
         header p {
@@ -122,6 +111,7 @@
             font-weight: 600;
             letter-spacing: 1px;
             text-transform: uppercase;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
         }
 
         /* Main Container */
@@ -131,7 +121,7 @@
             padding: 0 20px;
         }
 
-        /* Ancient Parchment Cards */
+        /* Cards */
         .card {
             background-color: var(--parchment-card);
             border-radius: 4px;
@@ -139,40 +129,21 @@
             margin-bottom: 40px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.06);
             border: 1px solid var(--border-gold);
-            position: relative;
-        }
-
-        .card::before {
-            content: "☦";
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 1.2rem;
-            color: var(--byzantine-gold);
-            opacity: 0.5;
         }
 
         h2 {
             font-family: 'Cinzel', serif;
-            color: var(--deep-crimson);
+            color: var(--text-dark);
             margin-bottom: 20px;
             font-size: 1.8rem;
-            border-bottom: 1px solid var(--border-gold);
+            border-bottom: 2px solid var(--byzantine-gold);
             padding-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        h2 span.cross {
-            color: var(--byzantine-gold);
-            font-size: 1.4rem;
         }
 
         .lang-toggle-btn {
             background-color: transparent;
             border: 2px solid var(--byzantine-gold);
-            color: var(--deep-crimson);
+            color: var(--text-dark);
             padding: 8px 16px;
             border-radius: 3px;
             cursor: pointer;
@@ -207,27 +178,18 @@
         .service-title {
             font-weight: 600;
             color: var(--text-dark);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .service-title::before {
-            content: "•";
-            color: var(--byzantine-gold);
-            font-size: 1.2rem;
         }
 
         .service-time {
-            color: var(--deep-crimson);
-            font-weight: 600;
+            color: var(--text-dark);
+            font-weight: 700;
             font-family: 'Cinzel', serif;
         }
 
-        /* Gallery Grid with Sacred Aesthetics */
+        /* Gallery Grid */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
             margin-top: 20px;
         }
@@ -236,7 +198,7 @@
             position: relative;
             border-radius: 4px;
             overflow: hidden;
-            height: 220px;
+            height: 280px;
             border: 3px solid var(--border-gold);
             background: #fff;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
@@ -251,6 +213,19 @@
 
         .gallery-item:hover img {
             transform: scale(1.06);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.75);
+            color: #fff;
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            padding: 8px;
+            text-align: center;
         }
 
         /* Map Container */
@@ -273,7 +248,7 @@
         footer {
             text-align: center;
             padding: 40px 20px;
-            background-color: #2c221e;
+            background-color: #1a1a1a;
             color: #d2b48c;
             font-family: 'Cinzel', serif;
             font-size: 0.85rem;
@@ -281,7 +256,6 @@
             letter-spacing: 1px;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             header h1 { font-size: 2rem; }
             .nav-container { flex-direction: column; gap: 10px; }
@@ -294,7 +268,7 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="#" class="nav-logo">☦ ARCHANGELS GEORGE</a>
+            <a href="#" class="nav-logo">ARCHANGELS GEORGE</a>
             <ul class="nav-links">
                 <li><a href="#about">Welcome</a></li>
                 <li><a href="#services">Services</a></li>
@@ -304,9 +278,8 @@
         </div>
     </nav>
 
-    <!-- Hero Header -->
+    <!-- Hero Header featuring exterior photo background -->
     <header>
-        <div class="header-ornament">☩ ☦ ☩</div>
         <h1>Greek Orthodox Church of the Archangels</h1>
         <p>George, Western Cape • Garden Route Parish</p>
     </header>
@@ -315,7 +288,7 @@
         
         <!-- Welcome Section -->
         <section id="about" class="card">
-            <h2><span class="cross">☦</span> Welcome to Our Parish</h2>
+            <h2>Welcome to Our Parish</h2>
             <button class="lang-toggle-btn" onclick="toggleLanguage()">Switch to Greek / Ελληνικά</button>
             
             <p id="welcome-text">
@@ -325,7 +298,7 @@
 
         <!-- Services Schedule -->
         <section id="services" class="card">
-            <h2><span class="cross">☦</span> Divine Services Schedule</h2>
+            <h2>Divine Services Schedule</h2>
             <ul class="schedule-list">
                 <li class="schedule-item">
                     <span class="service-title">Sunday Orthros (Matins)</span>
@@ -346,26 +319,33 @@
             </ul>
         </section>
 
-        <!-- Gallery Section -->
+        <!-- Gallery Section with uploaded photos -->
         <section id="gallery" class="card">
-            <h2><span class="cross">☦</span> Sacred Tradition & Parish Life</h2>
-            <p style="color: var(--text-muted); margin-bottom: 15px; font-style: italic;">Glancing into the beauty of our holy icons and sanctuary.</p>
+            <h2>Sacred Icons & Parish Life</h2>
+            <p style="color: var(--text-muted); margin-bottom: 15px; font-style: italic;">Views of our church exterior, Holy Iconostas, and altar.</p>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1548625361-1574972e79e6?auto=format&fit=crop&w=800&q=80" alt="Orthodox Church Architecture">
+                    <img src="exterior.jpg" alt="Church Exterior">
+                    <div class="gallery-caption">Church Exterior & Bell Tower</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=800&q=80" alt="Holy Icons and Votive Candles">
+                    <img src="iconostas.jpg" alt="Iconostas with Floral Decoration">
+                    <div class="gallery-caption">Holy Epitaphios & Iconostas</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1544427920-c49ccfb85579?auto=format&fit=crop&w=800&q=80" alt="Sanctuary Atmosphere">
+                    <img src="royal-doors.jpg" alt="Royal Doors & Sanctuary">
+                    <div class="gallery-caption">The Royal Doors</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="icon-christ.jpg" alt="Icon of Christ with Flowers">
+                    <div class="gallery-caption">Icon of Christ Almighty</div>
                 </div>
             </div>
         </section>
 
         <!-- Location Section -->
         <section id="location" class="card">
-            <h2><span class="cross">☦</span> Location & Pilgrimage</h2>
+            <h2>Location & Pilgrimage</h2>
             <p>Serving the Orthodox faithful across George and the scenic Garden Route region of the Western Cape.</p>
             
             <div class="map-container">
@@ -381,7 +361,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Greek Orthodox Church of the Archangels, George. All rights reserved. ☦ Doxa si o Theos.</p>
+        <p>&copy; 2026 Greek Orthodox Church of the Archangels, George. All rights reserved.</p>
     </footer>
 
     <!-- Language Toggle Script -->
